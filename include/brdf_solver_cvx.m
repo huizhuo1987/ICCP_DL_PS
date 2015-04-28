@@ -2,6 +2,7 @@
 % A Dictionary-based Approach for Estimating Shape and 
 % Spatially-Varying Reflectance
 % Zhuo Hui and Aswin Sankaranarayanan
+% ICCP 2015
 
 % We use cvx package, pl make sure you have set up the cvx before use it
 % 

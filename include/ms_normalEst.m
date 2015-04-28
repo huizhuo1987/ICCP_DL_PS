@@ -2,6 +2,7 @@
 % A Dictionary-based Approach for Estimating Shape and 
 % Spatially-Varying Reflectance
 % Zhuo Hui and Aswin Sankaranarayanan
+% ICCP 2015
 
 %% Input:
 
@@ -35,12 +36,12 @@
 function [idMat, errMat] = ms_normalEst(Bn, tSampleR, tSampleG, tSampleB, opt)
 
 lightsId = opt.lid;
-
-scale =  size(Bn, 1);
-errMat = cell(scale, length(siz));
-idMat = zeros(scale, length(siz));
 startScale = opt.start;
 mapSet = opt.mapSet;
+
+scale =  size(Bn, 1);
+errMat = cell(scale, size(tSampleR, 2));
+idMat = zeros(scale, size(tSampleR, 2));
 
 for i = 1:size(tSampleR, 2)
     tic
@@ -53,7 +54,7 @@ for i = 1:size(tSampleR, 2)
     
     % initialize the searching set of ids
     pId = 1:size(Bn{startScale, 1}, 3);
-    %tic
+    tic
     for ss = startScale:scale
         ee= [];
         for j = 1:length(pId)
@@ -78,7 +79,7 @@ for i = 1:size(tSampleR, 2)
             pId = unique([mapSet{ss}{pId(id(1))} mapSet{ss}{pId(id(2))} mapSet{ss}{pId(id(3))}]);
         end        
     end
-    %toc
+    toc
  end  
     
 
