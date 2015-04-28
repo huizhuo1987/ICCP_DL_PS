@@ -6,7 +6,7 @@ Zhuo Hui and Aswin Sankaranarayanan
 When you use the code to build your algorithm, please cite this paper. 
 
 --------------------------------------------------------------------------------------------------------------------
-# prerequisite
+# Prerequisite
  If you want to implement based on this code, please ensure that you have installed the cvx package
  You can download the package from the url http://cvxr.com/cvx/
 --------------------------------------------------------------------------------------------------------------------
