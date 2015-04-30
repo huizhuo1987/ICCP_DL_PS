@@ -57,8 +57,7 @@ for i = 1:size(tSampleR, 2)
     tic
     for ss = startScale:scale
         ee= [];
-        for j = 1:length(pId)
-            
+        for j = 1:length(pId)            
             BnR = Bn{ss, 1}(lightsId, :, pId(j));
             BnG = Bn{ss, 2}(lightsId, :, pId(j));
             BnB = Bn{ss, 3}(lightsId, :, pId(j));

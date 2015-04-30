@@ -22,7 +22,7 @@
 function [cR, cG, cB] = brdfEst(tSampleR, tSampleG, tSampleB, ...
                               B_totalR, B_totalG, B_totalB, ...
                               idNormals, opt)
-    cR = zeros(size(Bn_totalR, 2), size(tSampleR, 2));
+    cR = zeros(size(B_totalR, 2), size(tSampleR, 2));
     cG = cR;
     cB = cR;
     lambda = opt.lambda;
