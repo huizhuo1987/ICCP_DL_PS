@@ -38,6 +38,7 @@ function [idMat, errMat] = ms_normalEst(Bn, tSampleR, tSampleG, tSampleB, opt)
 lightsId = opt.lid;
 startScale = opt.start;
 mapSet = opt.mapSet;
+shadow_thres = opt.thres;
 
 scale =  size(Bn, 1);
 errMat = cell(scale, size(tSampleR, 2));
@@ -54,7 +55,7 @@ for i = 1:size(tSampleR, 2)
     
     % filter our shadow pixels
     tempY = mean([yR yG yB], 2);
-    nshadId = tempY > 3/255;
+    nshadId = tempY > shadow_thres/255;
     nId = lightsId(nshadId);
     y = [yR(nId, :); yG(nId, :); yB(nId, :)];
     y = y./norm(y);
