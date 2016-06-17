@@ -43,13 +43,20 @@ scale =  size(Bn, 1);
 errMat = cell(scale, size(tSampleR, 2));
 idMat = zeros(scale, size(tSampleR, 2));
 
+%
 for i = 1:size(tSampleR, 2)
     tic
     yR = tSampleR(lightsId, i);
     yG = tSampleG(lightsId, i);
     yB = tSampleB(lightsId, i);
     % normalzied the input intenisty
-    y = [ yR; yG; yB];
+
+    
+    % filter our shadow pixels
+    tempY = mean([yR yG yB], 2);
+    nshadId = tempY > 3/255;
+    nId = lightsId(nshadId);
+    y = [yR(nId, :); yG(nId, :); yB(nId, :)];
     y = y./norm(y);
     
     % initialize the searching set of ids
@@ -58,15 +65,15 @@ for i = 1:size(tSampleR, 2)
     for ss = startScale:scale
         ee= [];
         for j = 1:length(pId)            
-            BnR = Bn{ss, 1}(lightsId, :, pId(j));
-            BnG = Bn{ss, 2}(lightsId, :, pId(j));
-            BnB = Bn{ss, 3}(lightsId, :, pId(j));
+            BnR = Bn{ss, 1}(nId, :, pId(j));
+            BnG = Bn{ss, 2}(nId, :, pId(j));
+            BnB = Bn{ss, 3}(nId, :, pId(j));
             B = [ BnR; BnG; BnB];
             % normalized the B
             B = B./repmat(diag(sqrt(B'*B))', size(B, 1), 1);
             
             % solve NNLS problem we drop the sparisty constraint here
-            [~, ee(j)] = lsqnonneg(B, y);
+            [cc, ee(j)] = lsqnonneg(B, y);
         end
         [~, id] = sort(ee, 'ascend');
         errMat{ss, i} = ee;   
