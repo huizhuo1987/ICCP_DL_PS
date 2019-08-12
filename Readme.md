@@ -1,6 +1,6 @@
-### ICCP_DL_PS
-Code for dictioanry based Photometric Stereo
+# Dictionary based photometric stereo
 This code is based on the algorithm proposed in the paper
+
 "A Dictionary-based Approach for Estimating Shape and Spatially-Varying Reflectance", ICCP 2015
 Zhuo Hui and Aswin Sankaranarayanan
 When you use the code to build your algorithm, please cite this paper. 
@@ -10,16 +10,15 @@ huizhuo1987@gmail.com
 
 Copy rights reserved by the authors listed above.
 
---------------------------------------------------------------------------------------------------------------------
-# Prerequisite
+### Prerequisite
  If you want to implement based on this code, please ensure that you have installed the cvx package and set up the root
  correctly. 
  You can download the package from the url http://cvxr.com/cvx/
---------------------------------------------------------------------------------------------------------------------
-# set up
+
+### Set up
   Run the setup.m to set up the directory 
------------------------------------------------------------------------------------------------------------------------  
-# data
+
+### Data
   1 surface normal:   include surface normals of the bunny object and corresponding mask. 
   
   2 brdfs:            include only one material BRDF in MERL, and you can download the others from the url:
@@ -30,8 +29,8 @@ Copy rights reserved by the authors listed above.
   
   4 candidate normal: include the candidate normals sets used in the paper, the user can also generate the candidate
 		      normals by using the function "genNormals.m"	
------------------------------------------------------------------------------------------------------------------------  
-# include
+
+### Include
   1 brdf_solver_cvx.m: The function to get the per-pixel coefficients by solving the non-negative lasso problem
   
   2 brdfEst.m:         The function to run the brdf estimation for the estimated surface normals
@@ -56,15 +55,15 @@ Copy rights reserved by the authors listed above.
   
   11 relight.m:        Relighting the object based on the given surface normals and BRDF
 
------------------------------------------------------------------------------------------------------------------------    
-# lighting
+   
+### lighting
   light.m:             The lighting direction based on USC dataset
 					   http://gl.ict.usc.edu/LightStages/
------------------------------------------------------------------------------------------------------------------------  
-# scripts
+ 
+### scripts
   demo_brdflEst.m:     The script used to demo how to get the per-pixel estimates after obtained the surface normals
   
   demo_generateB.m:    The script used to demo how to generate the B matrix
   
   demo_normalEst.m:    The script used to demo how to get the normal estimates
------------------------------------------------------------------------------------------------------------------------  
+ 
