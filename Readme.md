@@ -1,8 +1,24 @@
 # Dictionary based photometric stereo
-This code is based on the algorithm proposed in the paper
+This code is based on the algorithm proposed in the following paper
 
-"A Dictionary-based Approach for Estimating Shape and Spatially-Varying Reflectance", ICCP 2015
-Zhuo Hui and Aswin Sankaranarayanan
+    @inproceedings{hui2015dictionary,
+	  	title={A dictionary-based approach for estimating shape and spatially-varying reflectance},
+	  	author={Hui, Zhuo and Sankaranarayanan, Aswin C},
+	  	booktitle={International Conference on Computational Photography (ICCP 2015)},
+	  	year={2015}
+	}
+
+    @article{hui2017shape,
+	  	title={Shape and spatially-varying reflectance estimation from virtual exemplars},
+	  	author={Hui, Zhuo and Sankaranarayanan, Aswin C},
+	  	booktitle={IEEE Trans. Pattern Analysis and Machine Intelligence (PAMI)},
+	  	volume={39},
+		number={10},
+		pages={2060-2073},
+		year={2017}
+	}
+	
+
 When you use the code to build your algorithm, please cite this paper. 
 
 Please contact the author Zhuo Hui if you have any problems with the code
