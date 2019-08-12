@@ -1,4 +1,4 @@
-# ICCP_DL_PS
+### ICCP_DL_PS
 Code for dictioanry based Photometric Stereo
 This code is based on the algorithm proposed in the paper
 "A Dictionary-based Approach for Estimating Shape and Spatially-Varying Reflectance", ICCP 2015
