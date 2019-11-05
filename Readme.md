@@ -76,11 +76,11 @@ https://drive.google.com/drive/folders/0B1ZPX_JY7z6CcTEwOG1vbFlrdk0?usp=sharing
   11 relight.m:        Relighting the object based on the given surface normals and BRDF
 
    
-### lighting
+### Lighting
   light.m:             The lighting direction based on USC dataset
 					   http://gl.ict.usc.edu/LightStages/
  
-### scripts
+### Scripts
   demo_brdflEst.m:     The script used to demo how to get the per-pixel estimates after obtained the surface normals
   
   demo_generateB.m:    The script used to demo how to generate the B matrix
