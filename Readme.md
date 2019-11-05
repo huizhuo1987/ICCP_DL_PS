@@ -26,6 +26,9 @@ huizhuo1987@gmail.com
 
 Copy rights reserved by the authors listed above.
 
+### Sphere normal map
+ If you would like to use the sphere normals generated in the paper, the normals can be downloaded from Google drive link
+
 ### Prerequisite
  If you want to implement based on this code, please ensure that you have installed the cvx package and set up the root
  correctly. 
